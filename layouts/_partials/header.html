@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg border-bottom">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/img/logo.png" width="32" />
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {{ $page := . }}
+                {{- range site.Menus.main }}
+                <li class="nav-item">
+                    {{ if $page.IsMenuCurrent .Menu . }}
+                    <a class="nav-link active" aria-current="page" href="{{ .URL }}">
+                    {{ else }}
+                    <a class="nav-link" href="{{ .URL }}">
+                    {{ end }}
+                        {{ .Name }}
+                    </a>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+    </div>
+</nav>
