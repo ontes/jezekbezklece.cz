@@ -1,3 +1,7 @@
 baseURL = 'https://example.org/'
 languageCode = 'cs'
 title = 'Ježek bez klece'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
